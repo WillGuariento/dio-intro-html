@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto tags aprendidas</title>
+</head>
+<body>
+    <h1 id="inicio">Primeiros Passos com HTML</h1>
+    <h2>Índice</h2>
+    <ul>
+        <li><a href="#intro">Introdução ao HTML</a></li>
+        <li><a href="#semantico">HTML Semântico</a></li>
+        <li><a href="#formulario">Trabalhando com Formulários</a></li>
+        <li><a href="#midias">Trabalhando com Mídias</a></li>
+        <li><a href="#referencias">Referências</a></li>
+    </ul>
+    <!-- INTRODUÇÃO AO HTML -->
+    <h2 id="intro">Introdução ao HTML</h2>
+    <p><abbr title="HyperText Markup Language">HTML</abbr> é a linguagem usada pra criar a estrutura de páginas na web. Ele não é uma linguagem de programação (tipo JavaScript), mas sim <strong>linguagem de marcação</strong>, que serve pra <mark>marcar</mark> os elementos da página: <em>título, parágrafo, imagem, link, lista e por aí vai.</em></p>Tudo em HTML é feito com tags, que são como <mark>blocos</mark> que dizem pro navegador o que cada parte da página representa. Essas tags são escritas entre sinais de <u>menor</u> e <u>maior</u> (tipo &lt;p&gt; ou &lt;img&gt;), e muitas delas têm uma tag de abertura e uma de fechamento (tipo &lt;h1&gt;...&lt;/h1&gt;).</p>
+
+    <p>A estrutura básica de uma página HTML começa com:</p>
+    <blockquote>
+        <em>
+            <code>
+                &lt;!DOCTYPE html&gt; – diz que o documento é HTML5.
+                <br />
+                &lt;html&gt; – envolve todo o conteúdo.
+                <br />
+                &lt;head&gt; – parte que vai coisas invisíveis pro usuário, tipo título da aba, link com arquivos CSS, etc.
+                <br />
+                &lt;body&gt; – onde fica o conteúdo visível: textos, imagens, links, botões...
+            </code>
+        </em>
+    </blockquote>
+    <p>Exemplos de tags importantes:</p>
+    <blockquote>
+        <em>
+            <code>
+                &lt;h1&gt; até &lt;h6&gt; – títulos, do maior pro menor.
+                <br />
+                &lt;p&gt; – parágrafos.
+                <br />
+                &lt;a href="..."&gt; – links.
+                <br />
+                &lt;img src="..." alt="..."&gt; – imagens.
+                <br />
+                &lt;ul&gt; e &lt;li&gt; – listas não ordenadas.
+                <br />
+                &lt;div&gt; e &lt;span&gt; – usadas pra organizar e agrupar elementos.
+            </code>
+        </em>
+    </blockquote>
+
+    <p>O HTML é o alicerce de qualquer site. Ele sozinho já monta a estrutura, mas precisa de <abbr title="Cascading Style Sheets">CSS</abbr> pra estilizar e de <abbr title="JavaScript">JS</abbr> pra deixar tudo mais interativo.</p>
+    <a href="#inicio">
+        <small>Clique para voltar ao ínicio</small>
+    </a>
+    <hr>
+
+    <!-- HTML SEMÂNTICO -->
+    <h2 id="semantico">HTML Semântico</h2>
+    <p>É quando você usa tags que têm significado próprio, em vez de só usar &lt;div&gt; e &lt;span&gt; pra tudo. Isso ajuda o navegador, os mecanismos de busca (como o Google) e até leitores de tela (usados por pessoas com deficiência visual) a entenderem o que cada parte do seu site representa.</p>
+
+    <p>Exemplos:</p>
+        <blockquote>
+            <p><strong>Não Semântico</strong></p>
+            <em>
+                <code>
+                    &lt;div id="menu"&gt;...&lt;/div&gt;
+                    <br>
+                    &lt;div id="conteudo"&gt;...&lt;/div&gt;
+                    <br>
+                    &lt;div id="rodape"&gt;...&lt;/div&gt;
+                </code>
+            </em>
+            <p><strong>Semântico</strong></p>
+            <em>
+                <code>
+                    &lt;nav&gt;...&lt;/nav&gt;
+                    <br>
+                    &lt;main&gt;...&lt;/main&gt;
+                    <br>
+                    &lt;footer&gt;...&lt;/footer&gt;
+                </code>
+            </em>
+        </blockquote>
+    <p>Tags semânticas mais comuns:</p>
+    <blockquote>
+        <em>
+            <code>
+                &lt;header&gt; – Cabeçalho (geral ou de uma seção).
+                <br>
+                &lt;nav&gt; – Área de navegação.
+                <br>
+                &lt;main&gt; – Conteúdo principal.
+                <br>
+                &lt;section&gt; – Bloco de conteúdo com tema.
+                <br>
+                &lt;article&gt; – Conteúdo independente (ex: post, notícia).
+                <br>
+                &lt;aside&gt; – Conteúdo lateral ou complementar.
+                <br>
+                &lt;footer&gt; – Rodapé.
+            </code>
+        </em>
+    </blockquote>
+    <p><strong><em>Por que usar HTML semântico?</em></strong></p>
+    <ul>
+        <li>Melhora a acessibilidade (para leitores de tela).</li>
+        <li>Facilita o SEO (Google entende melhor seu conteúdo).</li>
+        <li>Deixa o código mais organizado e legível.</li>
+        <li>Ajuda outras pessoas (ou você no futuro) a entenderem o que está acontecendo.</li>
+    </ul>
+    <a href="#inicio">
+        <small>Clique para voltar ao ínicio</small>
+    </a>
+    <hr>
+    
+    <!-- FORMULÁRIOS -->
+    <h2 id="formulario">Trabalhando com Formulários</h2>
+    <p>É o jeito de coletar dados do usuário (<em>nome, email, senha...</em>) e enviar pra algum lugar como por exemplo um <strong>servidor</strong>. Tudo começa com a tag &lt;form&gt;.</p>
+    <h3>Estrutura Básica</h3>
+    <blockquote>
+        <em>
+            <code>
+                &lt;form action=" " method=" "&gt;
+                <br />
+                &lt;/form&gt;
+            </code>
+        </em>
+    </blockquote>
+    <ul>
+        <li><strong>action:</strong> define pra onde os dados vão (ex: URL do servidor).</li>
+        <li><strong>method:</strong> pode ser <em>"get"</em> (envia na URL) ou <em>"post"</em> (envia “escondido”).</li>
+    </ul>
+    <p>Principais Tags usadas dentro de um formulário:</p>
+    <ol>
+        <li>
+            <p><strong>input</strong> - Campo genérico que muda conforme o type. (Ex.: <code>&lt;input type="..."&gt;</code>)</p>
+        </li>
+        <blockquote>
+            <em>
+                <code>
+                    type="text" – campo de texto.
+                    <br />
+                    <input type="text" placeholder="text">
+                    <br />
+                    type="email" – valida email.
+                    <br />
+                    <input type="email" placeholder="email">
+                    <br />
+                    type="password" – oculta os caracteres.
+                    <br />
+                    <input type="password" placeholder="password">
+                    <br />
+                    type="checkbox" – caixinha de seleção.
+                    <br />
+                    <input type="checkbox">
+                    <br />
+                    type="radio" – botão de opção única (geralmente em grupo).
+                    <br />
+                    <input type="radio" name="exemplo" value="yes"> <input type="radio" name="exemplo" value="no">
+                    <br />
+                    type="number" – só aceita números.
+                    <br />
+                    <input type="number" placeholder="number">
+                    <br />
+                    type="file" – para envio de arquivos.
+                    <br />
+                    <input type="file">
+                </code>
+            </em>
+        </blockquote>
+        <hr>
+        <li>
+            <p><strong>label</strong> - Texto que identifica um campo. Associado com o atributo <em>for</em>.</p>
+        </li>
+        <blockquote>
+            <em>
+                <code>
+                    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+                    <br />
+                    &lt;input type="text" name="nome"&gt;
+                    <br />
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome">
+                </code>
+            </em>
+        </blockquote>
+        <hr>
+        <li>
+            <p><strong>textarea</strong> - Área de texto maior (tipo “mensagem” ou “comentário”).</p>
+        </li>
+        <blockquote>
+            <em>
+                <code>
+                    &lt;textarea name="mensagem"&gt;&lt;/textarea&gt;
+                    <br />
+                    <textarea name="mensagem"></textarea>
+                </code>
+            </em>
+        </blockquote>
+        <hr>
+        <li>
+            <p><strong>select</strong> e <strong>option</strong> - Menu suspenso (<em>drop-down</em>).</p>
+        </li>
+        <blockquote>
+            <em>
+                <code>
+                    &lt;select name="cor"&gt;
+                    <br />
+                        &lt;option value="azul"&gt;Azul&lt;/option&gt;
+                        <br />
+                        &lt;option value="vermelho"&gt;Vermelho&lt;/option&gt;
+                        <br />
+                    &lt;/select&gt;
+                    <br />
+                    <select name="cor">
+                        <option value="azul">Azul</option>
+                        <option value="vermelho">Vermelho</option>
+                    </select>
+                </code>
+            </em>
+        </blockquote>
+    <hr>
+    <li>
+        <p><strong>button</strong> - Botão que pode ser submit e reset</p>
+    </li>
+        <p>A tag &lt;button&gt; tem diferentes comportamentos dependendo do valor do atributo type, e isso é útil pra controlar o que o botão vai fazer dentro de um formulário.</p>
+        <blockquote>
+            <em>
+                <code>
+                    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+                    <br />
+                    <button type="submit">Enviar</button>
+                    <br />
+                    &lt;button type="reset"&gt;Apagar&lt;/button&gt;
+                    <br />
+                    <button type="reset">Apagar</button>
+                </code>
+                <ul>
+                    <li><strong>submit:</strong> envia o formulário.</li>
+                    <li><strong>reset:</strong> limpa os campos.</li>
+                </ul>
+            </em>
+        </blockquote>
+    </ol>
+    <a href="#inicio">
+        <small>Clique para voltar ao ínicio</small>
+    </a>
+    <hr>
+
+    <!-- MIDIAS -->
+    <h2 id="midias">Trabalhando com Mídias</h2>
+    <p>Usamos o HTML pra exibir conteúdos visuais e sonoros na página: <em>imagens, vídeos, áudios</em> e até conteúdos de outras plataformas (como YouTube, mapas, etc.). Usando as tags &lt;img&gt;, &lt;audio&gt;, &lt;video&gt; e &lt;iframe&gt;</p>
+    <ol>
+        <li><strong>Imagens</strong> – &lt;img&gt;</li>
+        <p>Serve pra mostrar imagens na página.</p>
+        <blockquote>
+            <em>
+                <code>
+                    <img src="./src/html5.png" alt="logo HTML 5" width="30">
+                    <br>
+                    &lt;img src="caminho-da-imagem.png" alt="Descrição da imagem"&gt;
+                </code>
+            </em>
+        </blockquote>
+        <ul>
+            <li><em><strong>src:</strong></em> caminho do arquivo.</li>
+            <li><em><strong>alt:</strong></em> texto alternativo (acessibilidade).</li>
+            <li><em><strong>width</strong></em> e <em><strong>height:</strong></em> pra controlar o tamanho.</li>
+        </ul>
+        
+        <hr>
+
+        <li><strong>Áudio</strong> – &lt;audio&gt;</li>
+        <p>Pra tocar sons ou músicas.</p>
+        <blockquote>
+            <em>
+                <code>
+                    <audio controls>
+                        <source src="./src/audio.mp3" type="audio/mpeg">
+                        Seu navegador não suporta áudio.
+                    </audio>
+                    <br>
+                    &lt;audio controls&gt;
+                    <br>
+                        &lt;source src="caminho-d-audio.mp3" type="audio/mpeg"&gt;
+                        <br>
+                        Seu navegador não suporta áudio.
+                        <br>
+                    &lt;/audio&gt;
+                </code>
+            </em>
+        </blockquote>
+        <ul>
+            <li><em><strong>controls:</strong></em> mostra os botões de play/pause.</li>
+            <li><em><strong>autoplay:</strong></em> reproduz a mídia automaticamente.</li>
+            <li>Conseguimos usar outros formatos como <mark>.mp3, .ogg, .wav.</mark></li>
+        </ul>
+        
+        <hr>
+
+        <li><strong>Vídeo</strong> - &lt;video&gt;</li>
+        <p>Pra incorporar vídeos direto na página.</p>
+        <blockquote>
+            <em>
+                <code>
+                    <video controls width="300">
+                        <source src="./src/video.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                    <br>
+                    &lt;video controls width="300"&gt;
+                    <br>
+                        &lt;source src="caminho-do-video.mp4" type="video/mp4"&gt;
+                        <br>
+                        Seu navegador não suporta vídeo.
+                        <br>
+                    &lt;/video&gt;
+                </code>
+            </em>
+        </blockquote>
+        <ul>
+            <li><em><strong>controls:</strong></em> mostra os botões de play/pause.</li>
+            <li><em><strong>autoplay:</strong></em> reproduz a mídia automaticamente.</li>
+            <li><em><strong>loop:</strong></em> repete a mídia.</li>
+            <li><em><strong>muted:</strong></em> deixa a mídia no mudo.</li>
+            <li><em><strong>width:</strong></em> para controlar o tamanho.</li>
+        </ul>
+        
+        <hr>
+
+        <li><strong>Track</strong> - &lt;track&gt;</li>
+        <p>A tag &lt;track&gt; é útil quando você quer adicionar legendas, descrições ou traduções a um vídeo ou áudio no HTML. Ela funciona junto com as tags &lt;video&gt; ou &lt;audio&gt;, nunca sozinha.</p>
+        <blockquote>
+            <em>
+                <code>
+                    &lt;video controls width="300"&gt;
+                    <br>
+                        &lt;source src="caminho-do-video.mp4" type="video/mp4"&gt;
+                        <br>
+                        <mark>&lt;track src="legenda.vtt" kind="subtitles" srclang="pt" label="Português" default&gt;</mark>
+                        <br>
+                        Seu navegador não suporta vídeo.
+                        <br>
+                    &lt;/video&gt;
+                </code>
+            </em>
+        </blockquote>
+    </ol>
+    <a href="#inicio">
+        <small>Clique para voltar ao ínicio</small>
+    </a>
+    <hr>
+
+    <!-- REFERÊNCIAS -->
+    <h2 id="referencias">Referências</h2>
+    <ul type="none">
+        <li>👉 <strong><a href="https://www.dio.me/">Dio.me</a></strong> (<em>dio.me</em>)</li>
+        <p><em>Plataforma gratuita de ensino de tecnologia, com foco em cursos, bootcamps e desafios práticos para desenvolvedores. Oferece conteúdos sobre programação, front-end, back-end e muito mais.</em></p>
+
+        <hr>
+        
+        <li>👉 <strong><a href="https://www.w3.org/">W3C</a></strong> (<em>w3.org</em>)</li>
+        <p><em>Organização oficial responsável pela padronização das tecnologias da web, como HTML, CSS e JavaScript. É a fonte mais confiável para documentação técnica e recomendações oficiais.</em></p>
+
+        <hr>
+
+        <li>👉 <strong><a href="https://www.w3schools.com/">W3Schools</a></strong> (<em>w3schools.com</em>)</li>
+        <p><em>Site educacional com tutoriais, exemplos interativos e documentação prática sobre HTML, CSS, JavaScript e outras tecnologias web. Ótimo para iniciantes.</em></p>
+    </ul>
+    <a href="#inicio">
+        <small>Clique para voltar ao ínicio</small>
+    </a>
+    
+</body>
+</html>
